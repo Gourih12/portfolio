@@ -1,0 +1,19 @@
+public/
+└─ icons/
+   ├─ python.svg
+   ├─ c.svg
+   ├─ embedded.svg 
+   ├─ rtos.svg
+   ├─ esp32.svg
+   ├─ raspberrypi.svg
+   ├─ gnc.svg
+   ├─ avionics.svg
+   ├─ ins.svg
+   ├─ ml.svg
+   ├─ cv.svg
+   ├─ dl.svg
+   ├─ digital.svg
+   ├─ verilog.svg
+   ├─ fpga.svg
+   ├─ matlab.svg
+   └─ git.svg

@@ -1,0 +1,82 @@
+/* Noise texture effect */
+@keyframes noise {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+
+.noise-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /></filter><rect width="100" height="100" fill="%23000" filter="url(%23noise)" opacity="0.05"/></svg>');
+  background-size: 100px 100px;
+  animation: noise 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+
+/* Glow effect with noise */
+.glow-effect {
+  position: relative;
+  --glow-color: #ffffff;
+  --glow-intensity: 1;
+}
+
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  opacity: calc(var(--glow-intensity) * 0.3);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+
+/* Subtle grain texture */
+.grain {
+  position: relative;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+}
+
+
+
